@@ -4,9 +4,9 @@
 ---
 ## dubbo使用
 ---
- #### 服务提供者  
+#### 服务提供者  
 *启动类与现在对比，没有改动
-会默认使用lz-dubbo-config配置，加载默认配置，如果有必要可以启动参数-Ddubbo.config.key来修改配置,接口实现类如下，可以通过在ServiceProvider中指定version和dubbo的值，否则使用1.0.0和default作为默认值*
+会默认使用lz-dubbo-config配置，加载默认配置，如果有必要可以启动参数-Ddubbo.config.key来修改配置,可以通过在ServiceProvider注解指定version和dubbo的值，否则使用1.0.0和default作为默认值*
 ---?gist=gymonkey/39c5a4bcf637bfecf74a9e597cb2a490&lang=java&color=white&title=%E6%8F%90%E4%BE%9B%E8%80%85%E4%BE%8B%E5%AD%90
 ---  
 #### 服务调用者
@@ -26,8 +26,8 @@
 #### 扩展点
 |扩展点|用途|
 |---|----|
-|com.alibaba.dubbo.rpc.cluster.RouterFactory|从多个服务提者方中选择一个进行调用|
-|com.alibaba.dubbo.rpc.cluster.LoadBalance|从多个服务提者方中选择一个进行调用|
+|RouterFactory|从多个服务提者方中选择一个进行调用|
+|LoadBalance|从多个服务提者方中选择一个进行调用|
 ---
 ## 我们对dubbo的改造
 ---
