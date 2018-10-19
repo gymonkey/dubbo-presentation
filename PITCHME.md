@@ -3,30 +3,15 @@
 ## dubbo的基础介绍，与现在服务框架区别
 ---
 ## dubbo使用
-+++ 
+---
 - #### 服务提供者  
 	*启动类与现在对比，没有改动
-会默认使用lz-dubbo-config配置，加载默认配置，如果有必要可以启动参数-Ddubbo.config.key来修改配置,接口实现类如下，可以通过在ServiceProvider中指定version和dubbo的值，否则使用1.0.0和default作为默认值*    
-	```
-	@ServiceProvider(group="xxxxx",version="xxxx")
-	public class EchoServiceImpl implements EchoService {
-	
-	
-	}
-	```
-+++
-	*服务调用者与现在相比，代理类构造器初始化方法没有改动，与服务提供者类似，会使用默认的lz-dubbo-config配置，如果不明确指定，会使用1.0.0和default作为version和group默认值*  
-	```
-	public static void main(String[] args) throws Exception {
-		ProxyBuilder proxyBuilder = new ProxyBuilder();
-		// 会默认使用lz-dubbo-config配置，加载默认配置，如果有必要可以启动参数-Ddubbo.config.key来修改配置
-		proxyBuilder.init(new DataCenterServiceConsumerCodec(), "dc_proxy_office", 1, false);
-		// 默认生成version为1.0.0，group为default的代理类
-		EchoService echoService = proxyBuilder.buildProxy(EchoService.class);
-		// 自定义version和group的代理类
-		EchoService echoService = proxyBuilder.buildProxy(EchoService.class, "1.0.0", "default");
-	}
-	```
+会默认使用lz-dubbo-config配置，加载默认配置，如果有必要可以启动参数-Ddubbo.config.key来修改配置,接口实现类如下，可以通过在ServiceProvider中指定version和dubbo的值，否则使用1.0.0和default作为默认值*
+---?gist=gymonkey/f01ba06739b232bad30e8974c2fee49b#file-consumer-example-java-L2&lang=java&color=white&title=测试标题  
+- #### 服务调用者
+	*服务调用者与现在相比，代理类构造器初始化方法没有改动，与服务提供者类似，会使用默认的lz-dubbo-config配置，如果不明确指定，会使用1.0.0和default作为version和group默认值* 
+ 
+
 ---
 - #### 配置
 
