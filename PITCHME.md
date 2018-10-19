@@ -1,11 +1,12 @@
 # 标题
 ---
 ## dubbo的基础介绍，与现在服务框架区别
-+++
-## dubbo使用（例子，配置，扩展点）  
+---
+## dubbo使用
++++ 
 - #### 服务提供者  
 	*启动类与现在对比，没有改动
-会默认使用lz-dubbo-config配置，加载默认配置，如果有必要可以启动参数-Ddubbo.config.key来修改配置,接口实现类如下，可以通过在ServiceProvider中指定version和dubbo的值，否则使用1.0.0和default作为默认值*
+会默认使用lz-dubbo-config配置，加载默认配置，如果有必要可以启动参数-Ddubbo.config.key来修改配置,接口实现类如下，可以通过在ServiceProvider中指定version和dubbo的值，否则使用1.0.0和default作为默认值*    
 	```
 	@ServiceProvider(group="xxxxx",version="xxxx")
 	public class EchoServiceImpl implements EchoService {
@@ -13,6 +14,7 @@
 	
 	}
 	```
++++
 	*服务调用者与现在相比，代理类构造器初始化方法没有改动，与服务提供者类似，会使用默认的lz-dubbo-config配置，如果不明确指定，会使用1.0.0和default作为version和group默认值*  
 	```
 	public static void main(String[] args) throws Exception {
@@ -25,7 +27,7 @@
 		EchoService echoService = proxyBuilder.buildProxy(EchoService.class, "1.0.0", "default");
 	}
 	```
-+++
+---
 - #### 配置
 
 	| 配置项 | 作用 |
