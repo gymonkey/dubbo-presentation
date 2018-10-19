@@ -1,7 +1,7 @@
 # 标题
 ---
 ## dubbo的基础介绍，与现在服务框架区别
----
++++
 ## dubbo使用（例子，配置，扩展点）  
 - #### 服务提供者  
 	*启动类与现在对比，没有改动
@@ -25,7 +25,7 @@
 		EchoService echoService = proxyBuilder.buildProxy(EchoService.class, "1.0.0", "default");
 	}
 	```
----
++++
 - #### 配置
 
 	| 配置项 | 作用 |
